@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://172.24.58.32:13306/video_analysis?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: gwh842
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  thymeleaf:
+    cache: false
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+# Coze API Configuration
+coze:
+  api:
+    url: https://api.coze.cn/v1/workflow/run
+    token: pat_z8gE2QX9ofJo8Ciyys7EPt982gwfty5Pt5Fx10v0OasZSYxPhUUEtNxy7UZXbTOy
+    workflow-id: 7483907075220062220
+
+# Application Configuration
+app:
+  points:
+    register: 10
+    daily-login: 10
+    parse-cost: 1 
